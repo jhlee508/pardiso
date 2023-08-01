@@ -1,0 +1,10 @@
+# VSCode
+.vscode
+
+# Executables
+pardiso
+
+# Sample Matrix folders
+/sample_matrices
+/sample_matrices2
+/sample_npz

@@ -1,0 +1,22 @@
+# Cnpy (https://github.com/rogersce/cnpy)
+/cnpy
+
+# PANUA ()
+get_fingerprint
+panua.lic
+
+# Build
+Makefile
+
+# Pardiso Library (libpardiso.so) (+ liblapack.a/libblas.a)
+/lib
+
+# LAPACK/BLAS
+lapack-3.10.0
+lapack-3.10.0.tar
+
+# Executables
+pardiso
+pardiso_sym
+pardiso_unsym
+pardiso_samsung
