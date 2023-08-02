@@ -62,4 +62,6 @@ print("Actual Value:", b[max_rel_err_index])
 print()
 
 if np.testing.assert_array_almost_equal(A*x, b, decimal=6): # abs(desired-actual) < 1.5 * 10**(-decimal)
+  pass
+else:    
   print("\nValidation Successed!")

@@ -10,10 +10,10 @@ import scipy
 
 import mkl
 mkl.set_dynamic(0)
-mkl.set_num_threads(32)
+mkl.set_num_threads(16)
 
 
-mat = sio.loadmat("../sample_matrices/solvertest1.mat") # load sample matrix
+mat = sio.loadmat("../sample_matrices2/matrix_2037609.mat") # load sample matrix
 A, b = mat['J'], mat['R'].flatten()
 n = A.get_shape()[0]
 
@@ -45,19 +45,19 @@ print("--- Elapsed Time: %.4f seconds ---" % (time.time() - start_time))
 # print("Number of non-zeros:", ps.get_iparm(18))
 # print("GFlops:", ps.get_iparm(19) / 1000)
 
-print("The solution of the system is: ")
+print("\nThe solution of the system is: ")
 print(x)
-print("Saving PyPardiso MKL Solution ...")
-np.save('../sample_npz/solvertest1/solvertest1_mkl_sol', x)
+print("\nSaving PyPardiso MKL Solution ...")
+np.save('../sample_npz/matrix_2037609/mkl_sol', x)
 
-
-if np.testing.assert_array_almost_equal(A*x, b, decimal=6): # abs(desired-actual) < 1.5 * 10**(-decimal)
-    print("\nValidation2 Successed!")
-
-print("\nValidation3")
 sol = mat['sol'].flatten()
 sol_new = x
 abs_err = max([abs(i - j) for i, j in zip(sol, sol_new)])
 rel_err = max([abs(i - j) / i for i, j in zip(sol, sol_new) if i != 0])
-print("Absolute Error:", abs_err)
+print("\nAbsolute Error:", abs_err)
 print("Relative Error:", rel_err)
+
+if np.testing.assert_array_almost_equal(A*x, b, decimal=6): # abs(desired-actual) < 1.5 * 10**(-decimal)
+    pass
+else:
+    print("\nValidation Successed!")

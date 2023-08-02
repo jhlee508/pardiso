@@ -35,10 +35,10 @@ extern "C" void pardiso_printstats (int *, int *, double *, int *, int *, int *,
 int main( void ) 
 {
     /* Samsung Display Sample Matrix */
-    cnpy::NpyArray data = cnpy::npy_load("../sample_npz/solvertest1/solvertest1_data.npy"); // A data
-    cnpy::NpyArray col_idx = cnpy::npy_load("../sample_npz/solvertest1/solvertest1_col_idx.npy"); // A col_idx
-    cnpy::NpyArray row_ptr = cnpy::npy_load("../sample_npz/solvertest1/solvertest1_row_ptr.npy"); // A row_ptr
-    cnpy::NpyArray b_array = cnpy::npy_load("../sample_npz/solvertest1/solvertest1_b.npy"); // b array
+    cnpy::NpyArray data = cnpy::npy_load("../sample_npz/matrix_2037609/data.npy"); // A data
+    cnpy::NpyArray col_idx = cnpy::npy_load("../sample_npz/matrix_2037609/col_idx.npy"); // A col_idx
+    cnpy::NpyArray row_ptr = cnpy::npy_load("../sample_npz/matrix_2037609/row_ptr.npy"); // A row_ptr
+    cnpy::NpyArray b_array = cnpy::npy_load("../sample_npz/matrix_2037609/b.npy"); // b array
 
     printf("A data Size: %ld\n", data.shape[0]);
     printf("A col_idx Size: %ld\n", col_idx.shape[0]);
@@ -262,7 +262,7 @@ int main( void )
     printf ("\n");
 
     printf("Saving solution in npy file\n");
-    cnpy::npy_save("../sample_npz/solvertest1/solvertest1_panua_sol.npy", &x[0], {2036821}, "w"); // x array length(n)
+    cnpy::npy_save("../sample_npz/matrix_2037609/panua_sol.npy", &x[0], {2037609}, "w"); // x array length(n)
 
 /* -------------------------------------------------------------------- */    
 /* ..  Convert matrix back to 0-based C-notation.                       */
