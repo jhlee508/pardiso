@@ -48,7 +48,7 @@ int main( void )
     double*  a = data.data<double>();
     int*     ja = col_idx.data<int>();
     int*     ia = row_ptr.data<int>();
-    double*  b = data.data<double>();
+    double*  b = b_array.data<double>();
 
     int      n = (int)b_array.shape[0];
 
