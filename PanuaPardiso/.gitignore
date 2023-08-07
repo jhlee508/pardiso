@@ -1,15 +1,16 @@
 # Cnpy (https://github.com/rogersce/cnpy)
 /cnpy
 
-# PANUA ()
+# PANUA (https://panua.ch/pardiso/)
 get_fingerprint
-panua.lic
+/license
 
 # Build
 Makefile
 
 # Pardiso Library (libpardiso.so) (+ liblapack.a/libblas.a)
 /lib
+/lib_a4
 
 # LAPACK/BLAS
 lapack-3.10.0
@@ -20,3 +21,4 @@ pardiso
 pardiso_sym
 pardiso_unsym
 pardiso_samsung
+pardiso_a4
