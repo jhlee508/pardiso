@@ -8,9 +8,11 @@ import scipy.sparse as sp
 import scipy.io as sio
 import scipy
 
+import sys
+
 import mkl
 mkl.set_dynamic(0)
-mkl.set_num_threads(16)
+mkl.set_num_threads(int(sys.argv[1]))
 
 
 mat = sio.loadmat("../sample_matrices2/matrix_2037609.mat") # load sample matrix
@@ -41,7 +43,7 @@ ps.set_iparm(18 + 1, -1) # Report number of floating point operations
 
 start_time = time.time()
 x = pypardiso.spsolve(A, b, solver=ps) # phase(12): factorize + phase(33): solve 
-print("--- Elapsed Time: %.4f seconds ---" % (time.time() - start_time))
+print("--- Elapsed Time: %.6f seconds ---" % (time.time() - start_time))
 # print("Number of non-zeros:", ps.get_iparm(18))
 # print("GFlops:", ps.get_iparm(19) / 1000)
 
