@@ -302,3 +302,8 @@ export OMP_NUM_THREADS=32
 # Example code of StrumpackSparseSolverMPIDist
 mpirun -n 1 ./sp_mpi
 ```
+
+## Reference
+- [STRUMPACK Github](https://github.com/pghysels/STRUMPACK)
+- [STRUMPACK Webpage](https://portal.nersc.gov/project/sparse/strumpack/)
+- [STRUMPACK Document](https://portal.nersc.gov/project/sparse/strumpack/v7.1.0/index.html)
